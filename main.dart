@@ -1,50 +1,32 @@
 class Aluno {
+  late String nome;
+  late int matricula;
+  late int data;
+  late double ir;
 
-late String _nome;
-
-  String get nome => _nome;
-
-  set nome(String nome) {
-    _nome = nome;
-  } 
-late int _matricula;
-
-  int get matricula => _matricula;
-
-  set matricula(int matricula) {
-    _matricula = matricula;
+  void imprimir() {
+    print("Aluno " +
+        nome +
+        " nascido em $data" +
+        " matricula $matricula e indice de rendimento $ir");
   }
-late int _data;
-
-  int get data => _data;
-
-  set data(int data) {
-    _data = data;
-  }
-late double _ir;
-
-  double get ir => _ir;
-
-  set ir(double ir) {
-    _ir = ir;
-  }
-
- 
-
 }
 
 void main() {
-  
-  Aluno aluno = new Aluno();
+  Aluno aluno1 = new Aluno();
+  Aluno aluno2 = new Aluno();
 
-  aluno._nome = "Renato";
-  aluno._data = 1998;
-  aluno._matricula = 31;
-  aluno._ir = 8.1;
+  aluno1.nome = "Renato";
+  aluno1.data = 1998;
+  aluno1.matricula = 3131;
+  aluno1.ir = 8.0;
 
-  print("Nome:"+aluno._nome);
-  print("Data de Nascimento:"+ aluno._ir);
- 
- 
+  aluno1.imprimir();
+
+  aluno2.nome = "Marcos";
+  aluno2.data = 1995;
+  aluno2.matricula = 1212;
+  aluno2.ir = 3.0;
+
+  aluno2.imprimir();
 }
-
