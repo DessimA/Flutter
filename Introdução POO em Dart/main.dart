@@ -7,12 +7,24 @@ class Aluno {
   Aluno(this._nome, this._matricula, this._data, this._ir);
 
   String get nome => _nome;
+  set nome(String nome) {
+    _nome = nome;
+  }
 
   int get matricula => _matricula;
+  set matricula(int matricula) {
+    _matricula = matricula;
+  }
 
   int get data => _data;
+  set data(int data) {
+    _data = data;
+  }
 
   double get ir => _ir;
+  set ir(double ir) {
+    _ir = ir;
+  }
 
   void imprimir() {
     print("Aluno " +
