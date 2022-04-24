@@ -1,21 +1,29 @@
 class Aluno {
-  late String nome;
-  late int matricula;
-  late int data;
-  late double ir;
+  String _nome;
+  int _matricula;
+  int _data;
+  double _ir;
 
-  Aluno(this.nome, this.matricula, this.data, this.ir);
+  Aluno(this._nome, this._matricula, this._data, this._ir);
+
+  String get nome => _nome;
+
+  int get matricula => _matricula;
+
+  int get data => _data;
+
+  double get ir => _ir;
 
   void imprimir() {
     print("Aluno " +
-        nome +
-        " nascido em $data" +
-        " matricula $matricula e indice de rendimento $ir");
+        _nome +
+        " nascido em $_data" +
+        " matricula $_matricula e indice de rendimento $_ir");
   }
 }
 
 void main() {
-  Aluno aluno1 = new Aluno("Renato", 3131, 1998, 8.0);
+  Aluno aluno1 = new Aluno("Leo", 3131, 1998, 8.0);
   Aluno aluno2 = new Aluno("Marcos", 1212, 1995, 3.0);
 
   aluno1.imprimir();
