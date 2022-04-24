@@ -1,3 +1,5 @@
-# :books: Registro de etapas de aprendizado de Flutter no curso de Bacharelado em Sistemas da Informação
+# :books: Registro de etapas de aprendizado de Flutter 
 
 ## :book: Disciplina: Programação de Dispositivos Móveis
+
+> Curso de Bacharelado em Sistemas da Informação
