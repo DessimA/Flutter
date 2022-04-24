@@ -1,4 +1,4 @@
-# :books: Registro de etapas de aprendizado com Dart e Flutter 
+# :books: Registro de aprendizado com Dart e Flutter 
 
 ## :book: Disciplina: Programação de Dispositivos Móveis
 
