@@ -51,6 +51,8 @@ class Veiculo {
   Veiculo(this._marca, this._numeroPortas, this._preco, this._cor);
 
   void acelerar() {
+    if (_numeroPortas < 2) print("Você não pode acelerar");
+    else
     print("Estou acelerando");
   }
 
@@ -66,24 +68,24 @@ void main() {
 
   //Calculadora calculadora = new Calculadora("ELGIN", "azul", 4);
 
-  var listaQueridosAlunos = [];
+ /*   var listaQueridosAlunos = [];
   listaQueridosAlunos.add("Eduardo");
   listaQueridosAlunos.add("Kevin");
   listaQueridosAlunos.add("Julio");
   listaQueridosAlunos.add("Lilian");
   listaQueridosAlunos.add("Ana Mires");
-  listaQueridosAlunos.add(carroEduardo);
+  listaQueridosAlunos.add(carroEduardo); 
 
-  //listaQueridosAlunos.remove("Julio");
-  //listaQueridosAlunos.removeAt(3);
+  listaQueridosAlunos.remove("Julio");
+  listaQueridosAlunos.removeAt(3);
 
   print(listaQueridosAlunos);
-  print("O tamanho da lista é ${listaQueridosAlunos.length}");
-/* 
+  print("O tamanho da lista é ${listaQueridosAlunos.length}"); */
+
   carroEduardo.imprimirVeiculo();
   carroEduardo.acelerar();
 
-  calculadora.imprimirCalculadora();
+/*   calculadora.imprimirCalculadora();
   calculadora.calculadoraSoma(5, 4);
   calculadora.calculadoraSubtrair(4, 2);
   calculadora.calculadoraMultiplicar(7, 5);
