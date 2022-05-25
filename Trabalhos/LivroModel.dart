@@ -1,11 +1,17 @@
-abstract class LivroModel {
+import 'Autor.dart';
+import 'Categoria.dart';
+
+abstract class Livro {
   late String _titulo;
   late String _isbn;
   late String _lancamentoData;
   late double _preco;
+  late List<Autor> autor;
+  late List<Categoria> categoria;
 
-  LivroModel(){    
-  }
+  
+
+  Livro() {}
 
   String get titulo => this._titulo;
 
@@ -23,10 +29,7 @@ abstract class LivroModel {
 
   set preco(value) => this._preco = value;
 
-
   void aplicarDesconto(double _preco) {
-    _preco -= (_preco * 0.2);    
+    _preco -= (_preco * 0.2);
   }
-
-  }  
-
+}

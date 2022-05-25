@@ -1,4 +1,4 @@
-class CarinhoCompraController{
+class CarinhoCompra{
 
   adicionarLivro(){
 

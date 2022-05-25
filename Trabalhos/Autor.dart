@@ -1,4 +1,4 @@
-class AutorModel{
+class Autor{
 
   String? _autor;
   String? _cpf;
