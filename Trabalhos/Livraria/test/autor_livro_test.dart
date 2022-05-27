@@ -1,4 +1,4 @@
-import 'package:contact_book/autor_livro.dart';
+import 'package:autor_livro/autor_livro.dart';
 import 'package:test/test.dart';
 
 void main() {
