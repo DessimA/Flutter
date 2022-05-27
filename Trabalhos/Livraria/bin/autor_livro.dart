@@ -12,8 +12,8 @@ void main(List<String> arguments) {
 
   var livro1 = AutorLivro('Pense e enriqueça', '11111111', dataLancamento, autor1);
   var livro2 = AutorLivro('Teto para dois', '22222222', dataLancamento, autor2);
-  var livro3 = CategoriaLivro('Pense e enriqueça', '33333333', dataLancamento, 'Auto ajuda');
-  var livro4 = CategoriaLivro('Teto para dois', '44444444', dataLancamento, 'Romance');
+  var livro3 = CategoriaLivro('Pense e enriqueça', '33333333', dataLancamento, 'Livro de AutoAjuda');
+  var livro4 = CategoriaLivro('Teto para dois', '44444444', dataLancamento, 'Livro de Romance');
 
   schedule.addLivro(livro1);
   schedule.addLivro(livro2);
