@@ -1,10 +1,11 @@
 import 'dart:math';
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_crud/data/dummy_users.dart';
 import 'package:flutter_crud/models/user.dart';
 
 class Users with ChangeNotifier {
-  final Map<String, User> _items = {...dummyUsers};
+  final Map<String, User> _items = {...DUMMY_USERS};
 
   List<User> get all {
     return [..._items.values];
@@ -14,8 +15,8 @@ class Users with ChangeNotifier {
     return _items.length;
   }
 
-  User byIndex(int index) {
-    return _items.values.elementAt(index);
+  User byIndex(int i) {
+    return _items.values.elementAt(i);
   }
 
   void put(User user) {
@@ -51,7 +52,7 @@ class Users with ChangeNotifier {
   }
 
   void remove(User user) {
-    if (user != null && user.id != null) {
+    if(user != null && user.id != null) {
       _items.remove(user.id);
       notifyListeners();
     }

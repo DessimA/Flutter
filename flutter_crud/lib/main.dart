@@ -12,26 +12,25 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    return MultiProvider(providers: [
-      ChangeNotifierProvider(
-      create: (context) => Users(),
-      )
-    ],    
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => Users(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(     
+        theme: ThemeData(
           primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: {
-          AppRoutes.HOME:(_) => const UserList(),
-          AppRoutes.USER_FORM: (_) =>  UserForm()
+          AppRoutes.HOME: (_) => const UserList(),
+          AppRoutes.USER_FORM: (context) => const UserForm()
         },
       ),
     );
   }
 }
-
