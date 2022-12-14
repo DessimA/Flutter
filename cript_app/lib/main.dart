@@ -17,7 +17,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => AppSettings()),
         ChangeNotifierProvider(create: (context) => FavoritasRepository()),
       ],
-      child: MeuAplicativo(),
+      child: const MeuAplicativo(),
     ),
   );
 }

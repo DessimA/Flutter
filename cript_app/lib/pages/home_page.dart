@@ -5,9 +5,10 @@ import 'package:cript_app/pages/moedas_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -32,28 +33,30 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: PageView(
         controller: pc,
-        children: [
-          MoedasPage(),
-          FavoritasPage(),
-          CarteiraPage(),
-          ConfiguracoesPage(),
-        ],
         onPageChanged: setPaginaAtual,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          const MoedasPage(),
+          const FavoritasPage(),
+          const CarteiraPage(),
+          const ConfiguracoesPage(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: paginaAtual,
         type: BottomNavigationBarType.fixed,
+        // ignore: prefer_const_literals_to_create_immutables
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Todas'),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Todas'),
+          const BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
+          const BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet), label: 'Carteira'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Conta'),
+          const BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Conta'),
         ],
         onTap: (pagina) {
           pc.animateToPage(
             pagina,
-            duration: Duration(milliseconds: 400),
+            duration: const Duration(milliseconds: 400),
             curve: Curves.ease,
           );
         },

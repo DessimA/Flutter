@@ -6,9 +6,10 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class ConfiguracoesPage extends StatefulWidget {
-  ConfiguracoesPage({Key? key}) : super(key: key);
+  const ConfiguracoesPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ConfiguracoesPageState createState() => _ConfiguracoesPageState();
 }
 
@@ -22,25 +23,25 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Configurações'),
+        title: const Text('Configurações'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: Column(
           children: [
             ListTile(
-              title: Text('Saldo'),
+              title: const Text('Saldo'),
               subtitle: Text(
                 real.format(conta.saldo),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 25,
                   color: Colors.indigo,
                 ),
               ),
               trailing:
-                  IconButton(onPressed: updateSaldo, icon: Icon(Icons.edit)),
+                  IconButton(onPressed: updateSaldo, icon: const Icon(Icons.edit)),
             ),
-            Divider(),
+            const Divider(),
           ],
         ),
       ),
@@ -55,7 +56,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
     valor.text = conta.saldo.toString();
 
     AlertDialog dialog = AlertDialog(
-      title: Text('Atualizar o Saldo'),
+      title: const Text('Atualizar o Saldo'),
       content: Form(
         key: form,
         child: TextFormField(
@@ -72,7 +73,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
       ),
       actions: [
         TextButton(
-            onPressed: () => Navigator.pop(context), child: Text('CANCELAR')),
+            onPressed: () => Navigator.pop(context), child: const Text('CANCELAR')),
         TextButton(
           onPressed: () {
             if (form.currentState!.validate()) {
@@ -80,7 +81,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
               Navigator.pop(context);
             }
           },
-          child: Text('SALVAR'),
+          child: const Text('SALVAR'),
         ),
       ],
     );

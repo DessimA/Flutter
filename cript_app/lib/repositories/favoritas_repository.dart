@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 class FavoritasRepository extends ChangeNotifier {
-  List<Moeda> _lista = [];
+  final List<Moeda> _lista = [];
   late LazyBox box;
 
   FavoritasRepository() {
@@ -24,6 +24,7 @@ class FavoritasRepository extends ChangeNotifier {
   }
 
   _readFavoritas() {
+    // ignore: avoid_function_literals_in_foreach_calls
     box.keys.forEach((moeda) async {
       Moeda m = await box.get(moeda);
       _lista.add(m);
@@ -34,12 +35,12 @@ class FavoritasRepository extends ChangeNotifier {
   UnmodifiableListView<Moeda> get lista => UnmodifiableListView(_lista);
 
   saveAll(List<Moeda> moedas) {
-    moedas.forEach((moeda) {
+    for (var moeda in moedas) {
       if (!_lista.any((atual) => atual.sigla == moeda.sigla)) {
         _lista.add(moeda);
         box.put(moeda.sigla, moeda);
       }
-    });
+    }
     notifyListeners();
   }
 

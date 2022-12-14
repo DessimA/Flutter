@@ -7,9 +7,10 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class CarteiraPage extends StatefulWidget {
-  CarteiraPage({Key? key}) : super(key: key);
+  const CarteiraPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CarteiraPageState createState() => _CarteiraPageState();
 }
 
@@ -35,10 +36,10 @@ class _CarteiraPageState extends State<CarteiraPage> {
 
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 48),
+        padding: const EdgeInsets.only(top: 48),
         child: Column(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(top: 48, bottom: 8),
               child: Text(
                 'Valor da Carteira',
@@ -49,7 +50,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
             ),
             Text(
               real.format(totalCarteira),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.w700,
                 letterSpacing: -1.5,
@@ -76,7 +77,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
         trailing: Text(
             (operacao.moeda.preco * operacao.quantidade).toStringAsFixed(2)),
       ));
-      widgets.add(Divider());
+      widgets.add(const Divider());
     }
 
     return Column(
@@ -97,10 +98,10 @@ class _CarteiraPageState extends State<CarteiraPage> {
 
   loadGrafico() {
     return (conta.saldo <= 0)
-        ? Container(
+        ? SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 200,
-            child: Center(
+            child: const Center(
               child: CircularProgressIndicator(),
             ),
           )
@@ -115,6 +116,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
                     centerSpaceRadius: 110,
                     sections: loadCarteira(),
                     pieTouchData: PieTouchData(
+                      // ignore: non_constant_identifier_names, avoid_types_as_parameter_names
                       touchCallback: (FlTouchEvent, touch) => setState(() {
                         index = touch!.touchedSection!.touchedSectionIndex;
                         setGraficoDados(index);
@@ -127,11 +129,11 @@ class _CarteiraPageState extends State<CarteiraPage> {
                 children: [
                   Text(
                     graficoLabel,
-                    style: TextStyle(fontSize: 20, color: Colors.teal),
+                    style: const TextStyle(fontSize: 20, color: Colors.teal),
                   ),
                   Text(
                     real.format(graficoValor),
-                    style: TextStyle(fontSize: 28),
+                    style: const TextStyle(fontSize: 28),
                   ),
                 ],
               )
