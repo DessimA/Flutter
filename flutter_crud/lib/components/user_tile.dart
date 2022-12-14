@@ -7,11 +7,11 @@ import 'package:provider/provider.dart';
 class UserTile extends StatelessWidget {
   final User user;
 
-  const UserTile(this.user);
+  const UserTile(this.user, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
+    final avatar = user.avatarUrl.isEmpty
         ? const CircleAvatar(child: Icon(Icons.person))
         : CircleAvatar(backgroundImage: NetworkImage(user.avatarUrl));
     return ListTile(
